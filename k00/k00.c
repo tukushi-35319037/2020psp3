@@ -15,5 +15,7 @@ int main (void)
             printf("%d\n",*(p+i));
         }
         free(p);
+
+        
     }
 }
