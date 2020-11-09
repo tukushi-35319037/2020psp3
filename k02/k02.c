@@ -108,7 +108,7 @@ int SearchCityByID(Node* pList, int ID, City* pCity)
     Node* pNode;
     pNode=pList;
     while(pNode != NULL){
-        count++;
+        
         if(pNode->city.id != ID){
          pNode=pNode->pNext;
         }else{
@@ -116,8 +116,8 @@ int SearchCityByID(Node* pList, int ID, City* pCity)
             return(count);
             break;
         }
-         
-        }
+         count++;
+    }
     return -1;
 }
 
