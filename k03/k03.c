@@ -83,6 +83,7 @@ while(index<text_len)
     index = keep + table[text[keep]];
     }
     
+    
 }
 return NULL;
 }
