@@ -74,16 +74,16 @@ while(index<text_len)
       break;
      }
     }
-    if(keep>=keep+table[text[keep]])
+    if(keep>=index+table[text[keep]])
     {
    index = keep +1;
     }
     else
     {
-    index = keep + table[text[keep]];
+    index = index + table[text[keep]];
     }
     
-    
+
 }
 return NULL;
 }
