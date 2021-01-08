@@ -102,19 +102,19 @@ while(cnt !=0)
 void QuickSort(City arrayCity[], int left, int right)
 {
     //  ここを実装する
-    int i=left, j=right, size;
-    size=sizeof(arrayCity)/sizeof(arrayCity[0]);
-    City tmp[size],pivot[size];
+    int i=left, j=right;
+    int pivot = arrayCity[left].seafood;
+    City tmp;
     if (left == right) 
     {
     i=left;
     j=right;
-    pivot[left].seafood=arrayCity[left].seafood;
+    pivot=arrayCity[left].seafood;
         while(1)
         {
             while(i<=right) 
             {
-                if(pivot[left].seafood<arrayCity[left].seafood)
+                if(arrayCity[i].seafood>pivot)
                 {
                     break;
                 }
@@ -122,7 +122,7 @@ void QuickSort(City arrayCity[], int left, int right)
             }
             while(left < j) 
             {
-               if(arrayCity[right].seafood <= pivot[left].seafood)
+               if(arrayCity[j].seafood <= pivot)
                 {
                     break;
                 }
@@ -133,15 +133,15 @@ void QuickSort(City arrayCity[], int left, int right)
                 break;
             }else 
             {
-                tmp[left]=arrayCity[left];
-                arrayCity[left]=arrayCity[right];
-                arrayCity[right]=tmp[left];
+                tmp=arrayCity[i];
+                arrayCity[i]=arrayCity[j];
+                arrayCity[j]=tmp;
 
             }
         }
-    tmp[left]=pivot[left];
-    pivot[left]=arrayCity[right];
-    arrayCity[right]=tmp[left];
+    tmp=arrayCity[left];
+    arrayCity[left]=arrayCity[i];
+    arrayCity[i]=tmp;
 
     QuickSort(arrayCity, left, j-1);
     QuickSort(arrayCity, j+1, right);
