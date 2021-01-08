@@ -79,7 +79,8 @@ int LoadData(City arrayCity[])
 void BubbleSort(City arrayCity[], int size)
 {
     //  ここを実装する
-int pos,tmp;
+int pos;
+City tmp[size];
 int cnt =1;
 while(cnt !=0)
 {
@@ -88,9 +89,9 @@ while(cnt !=0)
     {
         if(arrayCity[pos].total>arrayCity[pos+1].total)
         {
-        tmp = arrayCity[pos].total;
-        arrayCity[pos].total =arrayCity[pos+1].total;
-        arrayCity[pos+1].total = tmp;
+        tmp[pos] = arrayCity[pos];
+        arrayCity[pos] =arrayCity[pos+1];
+        arrayCity[pos+1] = tmp[pos];
         cnt++;
         }
     }
@@ -101,48 +102,46 @@ while(cnt !=0)
 void QuickSort(City arrayCity[], int left, int right)
 {
     //  ここを実装する
-    double size;
-    int i, j, pivot,tmp;
+    int i=left, j=right, size;
     size=sizeof(arrayCity)/sizeof(arrayCity[0]);
-    if (size>1) 
+    City tmp[size],pivot[size];
+    if (left == right) 
     {
     i=left;
     j=right;
-    pivot=arrayCity[left].seafood;
+    pivot[left].seafood=arrayCity[left].seafood;
         while(1)
         {
-            while(i<=size-1) 
+            while(i<=right) 
             {
-                if(pivot<arrayCity[left].seafood)
+                if(pivot[left].seafood<arrayCity[left].seafood)
                 {
-                    i=left;
                     break;
                 }
                 i++;
             }
-            while(size-j<size) 
+            while(left < j) 
             {
-                if(arrayCity[right].seafood < pivot)
+               if(arrayCity[right].seafood <= pivot[left].seafood)
                 {
-                    j=right;
                     break;
                 }
-                j++;
+                j--;
             }
             if (i>=j) 
             {
                 break;
             }else 
             {
-                tmp=arrayCity[i].seafood;
-                arrayCity[i].seafood=arrayCity[j].seafood;
-                arrayCity[j].seafood=tmp;
+                tmp[left]=arrayCity[left];
+                arrayCity[left]=arrayCity[right];
+                arrayCity[right]=tmp[left];
 
             }
         }
-    tmp=pivot;
-    pivot=arrayCity[j].seafood;
-    arrayCity[j].seafood=tmp;
+    tmp[left]=pivot[left];
+    pivot[left]=arrayCity[right];
+    arrayCity[right]=tmp[left];
 
     QuickSort(arrayCity, left, j-1);
     QuickSort(arrayCity, j+1, right);
