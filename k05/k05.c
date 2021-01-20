@@ -130,7 +130,11 @@ void DepthFirstSearch(int size, int matrix[size][size], int start)
             }
         }
     }
-    printf("%d\n",visited);
+    printf("depth first search\n");
+    for(i=0;i<size;i++)
+    {
+        printf("visited[%d]%d\n",i,visited[i]);
+    }
 }
 
 
@@ -208,12 +212,12 @@ void BreadthFirstSearch(int size, int matrix[size][size], int start)
     while(QueueIsEmpty() == FALSE)
     {
         DeQueue();
-        if(visited[QueueCount] != 0)
+        if(visited[QueueOut] != 0)
         {
-            visited[QueueCount] = 1;
+            visited[QueueOut] = 1;
             for(i=0;i<size;i++)
             {
-                if(matrix[QueueCount][i] != 0 )
+                if(matrix[QueueOut][i] != 0 )
                 for(i=0;i<size;i++)
                 {
                     StackPush(i);
@@ -222,7 +226,11 @@ void BreadthFirstSearch(int size, int matrix[size][size], int start)
         }
 
     }
-    printf("%d\n",visited);
+    printf("bread first search\n");
+     for(i=0;i<size;i++)
+    {
+        printf("visited[%d]%d\n",i,visited[i]);
+    }
 }
 
 
