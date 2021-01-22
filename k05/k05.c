@@ -106,7 +106,7 @@ int StackIsEmpty(void)
 void DepthFirstSearch(int size, int matrix[size][size], int start)
 {
     //  ここを実装する
-    int visited[size], i;
+    int visited[size], i,index;
     for(i=0;i<size;i++)
     {
         visited[i] = 0;
@@ -117,13 +117,13 @@ void DepthFirstSearch(int size, int matrix[size][size], int start)
 
     while(StackIsEmpty() == FALSE)
     {
-        StackPop();
-        if(visited[SP] ==  0)
+        index = StackPop();
+        if(visited[index] ==  0)
         {
-            visited[SP] = 1;
+            visited[index] = 1;
             for(i=0;i<size;i++)
             {
-               if(matrix[SP][i] != 0)
+               if(matrix[index][i] != 0)
                {
                    StackPush(i);
                }
@@ -200,7 +200,7 @@ int QueueIsEmpty()
 void BreadthFirstSearch(int size, int matrix[size][size], int start)
 {
     //  ここを実装する
-    int visited[size],i;
+    int visited[size],i,index;
 
     for(i=0;i<size;i++)
     {
@@ -211,16 +211,16 @@ void BreadthFirstSearch(int size, int matrix[size][size], int start)
 
     while(QueueIsEmpty() == FALSE)
     {
-        DeQueue();
-        if(visited[QueueOut] != 0)
+        index = DeQueue();
+        if(visited[index] == 0)
         {
-            visited[QueueOut] = 1;
+            visited[index] = 1;
             for(i=0;i<size;i++)
             {
-                if(matrix[QueueOut][i] != 0 )
+                if(matrix[index][i] != 0 )
                 for(i=0;i<size;i++)
                 {
-                    StackPush(i);
+                    EnQueue(i);
                 }
             }
         }

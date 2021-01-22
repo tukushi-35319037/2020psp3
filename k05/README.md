@@ -1,5 +1,5 @@
 # 課題5 レポート
-学生番号　氏名
+学生番号　35319037 氏名　　平松　響
 
 
 ## 課題
@@ -97,13 +97,92 @@ int AdjacencyMatrix[MAX_STATIONS][MAX_STATIONS] = {
 - 幅優先探索のルート表示(10点)
 
 ## ソースコードの説明
+110~113.visitedを初期化する
+115.スタックを初期化する
+116.スタックにstartをいれる
+118.スタックが空にならない限り、繰り返す
+119~123.スタックを取り出し、取り出したスタックが一度も訪れてなかったら、訪れたことにする
+124~128.今いるところとつながっている場所をスタックする
+133~136.訪れたかどうか出力する
+
+205~208.visitedを初期化する
+209.キューを初期化する
+210.キューにstastをいれる
+212.キューが空でなかったら繰り返す
+214.キューから値を取り出す
+215~228.まだ訪れていなかったら訪れたことにして、繋がっているところをキューにいれる
+229~232.訪れたかどうか出力する
 
 
 
 ## 出力結果
 
 ```
-
+depth first search
+visited[0]1
+visited[1]1
+visited[2]1
+visited[3]1
+visited[4]1
+visited[5]1
+visited[6]1
+visited[7]1
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+Queue Overflow
+bread first search
+visited[0]1
+visited[1]1
+visited[2]1
+visited[3]1
+visited[4]1
+visited[5]1
+visited[6]1
+visited[7]1
+Time Required: 8
 ```
 
 ## 修正履歴
