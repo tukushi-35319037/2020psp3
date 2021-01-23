@@ -119,69 +119,23 @@ int AdjacencyMatrix[MAX_STATIONS][MAX_STATIONS] = {
 
 ```
 depth first search
-visited[0]1
-visited[1]1
-visited[2]1
-visited[3]1
-visited[4]1
-visited[5]1
-visited[6]1
-visited[7]1
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
-Queue Overflow
+visited[0]=1
+visited[1]=1
+visited[2]=1
+visited[3]=1
+visited[4]=1
+visited[5]=1
+visited[6]=1
+visited[7]=1
 bread first search
-visited[0]1
-visited[1]1
-visited[2]1
-visited[3]1
-visited[4]1
-visited[5]1
-visited[6]1
-visited[7]1
+visited[0]=1
+visited[1]=1
+visited[2]=1
+visited[3]=1
+visited[4]=1
+visited[5]=1
+visited[6]=1
+visited[7]=1
 Time Required: 8
 ```
 
