@@ -219,7 +219,6 @@ void BreadthFirstSearch(int size, int matrix[size][size], int start)
             {
                 if(matrix[index][i] != 0 )
                 {
-                
                     EnQueue(i);
                 }
                 
