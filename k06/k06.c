@@ -75,7 +75,7 @@ void DynamicProgLimited(Menu arrayItem[], int items, int nap_size)
     int i,j,k;
     for(i=0;i<items+1;i++)
     {
-        for(j=0;j<items+1;i++)
+        for(j=0;j<nap_size+1;j++)
         {
             nap_value[i][j]=0;
             history[i][j]=0;
@@ -86,10 +86,7 @@ void DynamicProgLimited(Menu arrayItem[], int items, int nap_size)
     {
         for(k=1;k<arrayItem[i-1].price;k++)
         {
-            if(nap_value[i][j] < arrayItem[i-1].price)
-            {
                 nap_value[i][k] = nap_value[i-1][k];
-            }
         }
         for(j=k;j<=nap_size;j++)
         {
@@ -104,7 +101,7 @@ void DynamicProgLimited(Menu arrayItem[], int items, int nap_size)
             
         }
     }
-
+    printf("MAX_calorie is %d\n",nap_value[items][nap_size]);
 }
 
 
